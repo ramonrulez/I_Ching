@@ -8,6 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-ggdb",
+                // "-O2",
+                // "-DNDEBUG",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

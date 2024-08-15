@@ -26,12 +26,13 @@ struct LowerTrigram
 class Hexagram
 {
     private:
-        UpperTrigram upTri{};
-        LowerTrigram lowTri{};
+        UpperTrigram m_upTri{};
+        LowerTrigram m_lowTri{};
 
     public:
-        
-
+        Hexagram(UpperTrigram& upper, LowerTrigram& lower)
+            : m_upTri{upper}, m_lowTri{lower}
+            {}
 
 };
 
