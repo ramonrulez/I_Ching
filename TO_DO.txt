@@ -1,0 +1,16 @@
+Question:
+    We need the user to think about the question that he needs guidance. We can give him the opportunity to write it down, edit it if he wants it or made a mistake, and this should be ALWAYS visible.
+
+Casting coins:
+    We have 2 different ways we need to implement. 
+    The first way is to casts his coins traditionally and input the results.
+    The second way is to work with a RNG to cast the coins. I think that this casting should be implemented in a parallel way for the 3 coins.
+
+Building Trigram/Hexagram:
+    In every coin toss the result should initialize the 2 Trigrams and after that this Trigrams should initialize our Hexagram object.
+
+Finding Hexagram:
+    We should have a simle table with the correspondence of the symbols that we just initialized to give us the quote OR quotes that we should read and analyze.
+
+Printing quotes:
+    We just need a printer function to print the quote or quotes in a distinctive way.
