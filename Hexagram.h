@@ -1,37 +1,27 @@
 #ifndef HEXAGRAM_H
 #define HEXAGRAM_H
 
-// The Gram struct defines the building block of the trigram.
-// It consists of dashes(-), whitespace( ) and a period(.).
-// It can have 4 different patterns.
 #include <map>
 #include <string>
 
 const std::map<std::string, std::string> gramMap{{"hhh", "- -."}, {"hht", "---"}, {"htt", "- - "}, {"ttt", "---."}};
 
-struct UpperTrigram
+struct Trigram
 {
-    std::string m_upGram_1{};
-    std::string m_upGram_2{};
-    std::string m_upGram_3{};
-};
-
-struct LowerTrigram
-{
-    std::string m_logram_1{};
-    std::string m_logram_2{};
-    std::string m_logram_3{};
+    std::string m_gram_1{};
+    std::string m_gram_2{};
+    std::string m_gram_3{};
 };
 
 class Hexagram
 {
     private:
-        UpperTrigram m_upTri{};
-        LowerTrigram m_lowTri{};
+        Trigram m_upTri{};
+        Trigram m_loTri{};
 
     public:
-        Hexagram(UpperTrigram& upper, LowerTrigram& lower)
-            : m_upTri{upper}, m_lowTri{lower}
+        Hexagram(Trigram& upper, Trigram& lower)
+            : m_upTri{upper}, m_loTri{lower}
             {}
 
 };
