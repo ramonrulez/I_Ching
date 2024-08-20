@@ -1,0 +1,17 @@
+This is the I Ching
+Is a book about change.
+You ask a question with your soul and you let the cosmic intelligence to do it's thing.
+
+The rules that you must follow to get answers for your question is in the I Ching book so I would not bother you with that.
+
+After the Hexagram is complete the program will give you the passage with the number that the mother luck wants you to read.
+Some requirements:
+	- The user should write his questions in the program and save them for future reference.
+	- The question should always be in the screen after the initial input.
+	- The user should have the choise to cast and input his own coins or let the computer to do that.
+
+Extra ideas:
+	- The user should have access to every passage of the book individually.
+	- The user should have access to all the hexagrams and their names.
+	- The user should have access to the cross reference chart of the hexagrams.
+	- Maybe let the program to quote a random passage for the users enjoyment.

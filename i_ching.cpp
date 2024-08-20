@@ -1,4 +1,4 @@
-#include "Hexagram.h"
+ #include "Hexagram.h"
 #include <iostream>
 
 int main() {

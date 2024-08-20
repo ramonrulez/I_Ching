@@ -8,9 +8,22 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                
+                // Debug of release
                 "-ggdb",
                 // "-O2",
                 // "-DNDEBUG",
+                
+                // Warning levels
+                "-Wall",
+                "-Weffc++",
+                "-Wextra",
+                "-Wconversion",
+                "-Wsign-conversion",
+                
+                // Warnings as errors
+                "-Werror",
+
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

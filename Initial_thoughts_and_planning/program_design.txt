@@ -1,0 +1,61 @@
+Intro:
+    - Print the First page of the I Ching
+    - Print the MAIN menu and ask the user:
+        - ask a question, 
+        - read the book,
+        - see a certain quote, see the hexagrams etc.
+        - recall past questions with their results
+        - print a random quote.
+
+QUESTION:
+    Book Intro:
+        - Print an intro about the book and how it works.(See the actual book for that)
+
+    Question:
+        - Let the user input a question.
+            - Save it in a std::string (to have acces to it).
+            - Print the question and ask the user if his question is right.
+                - If it is continue with the execution.
+                - If it is NOT let him write again the question (if you can edit the string do that).
+            - Clear the screen, print the question and continue with the program.
+
+    Coin Casting:
+        - Here the user has 2 choises:
+            - First is to cast the coins for himself anf input the results (ask the user if he knows how to cast them and give him instructions if he doesnt).
+            - Secondly is to let the RNG give him randomly generated results (parallel casting of the coins).
+
+    Bulding Trigram/Hexagram:
+        - The results should be saved in data structures that compose 2 Trigrams and those Trigrams can compose the Hexagram.
+
+    Finding the quote:
+        - The composed Hexagram should be used in conjunction with a look-up table to find the right quote for the current Hexagram.
+
+    Printing the quote:
+        - When the reference to the quote is been completed the quote should be printed.
+        - Some coin casting should compose 2 quotes, the normal quote and that that will become to.
+
+    Ending the question:
+        - Before we exit we should save the question, and the hexagram, and the time so we can later recall it.
+
+BOOK:
+    - Prints the book as it is with some exceptions:
+        - The Hexagrams and the diagrams should be printed seperatelly but in the right order.
+        - The book should be as is writen. Without ANY disregards.
+        - the book should be accessed with scrolling
+        - Press any key to return to teh menu
+
+RECALL_QUESTION:
+    - Print a submenu with the past questions:
+        - Recent first, 
+        - Date in the begging of the output string
+        - and the begging of the question after the Date
+        - Press any key to return to teh menu
+
+RECALL_DATA:
+    - Print a submenu with data that can be directly accessed:
+        - Hexagrams with names
+        - Any quote
+        - Hexagram chart
+
+RANDOM_QUOTE:
+    - Print a random quote 
