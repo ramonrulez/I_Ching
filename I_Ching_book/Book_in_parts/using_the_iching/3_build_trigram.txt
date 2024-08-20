@@ -1,0 +1,11 @@
+Building a Trigram
+Match the heads or tails' pattern of the cast coins with one of the 4 patterns shown in the following table. Make
+note of the associated line form next to the matched pattern and write it down. (Note that if you cast three-
+of-a-kind, the line form will have a dot after it). Repeat this coin casting process 2 more times. each time placing
+the next line form on top of the previous one. Having done this 3 times, you will have a 3 line figure known as a trigram.
+
+Example trigram
+
+3rd cast -+ - -
+2nd cast -+ • 
+1st cast -+ - -

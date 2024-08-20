@@ -1,0 +1,4 @@
+Building a Hexagram
+You need to create 2 trigrams to make a full hexagram. So, create a second trigram using the same
+process above. When done you will have created a hexagram consisting of a lower trigram (the first one)
+and an upper trigram (the second one).
