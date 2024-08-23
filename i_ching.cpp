@@ -12,7 +12,7 @@ void printBookPart(const std::string& bookPart)
     std::string inputString; 
     std::ifstream inFile;
 
-    inFile.open(std::string(bookPart));
+    inFile.open(bookPart);
     
     if (!inFile)
     {
@@ -33,7 +33,7 @@ void printBookPart(const std::string& bookPart)
 
 int main() {
     
-    printBookPart(getTextLocation( BookPartsLocation::intro));
+    printBookPart(getTextLocation(BookPartsLocation::intro));
     printMainMenu();
     
     return 0;
