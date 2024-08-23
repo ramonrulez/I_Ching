@@ -1,34 +1,18 @@
+#include "BookPartsLocation.cpp"
+#include "Menus.cpp"
+
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <vector>
 
-namespace TextLocation
+void printBookPart(const std::string& bookPart)
 {
-    const std::string bookFolder{"I_Ching_book/Book_in_parts/"};
-    const std::string intro{"0_intro.txt"}; 
-};
-
-namespace MenuItems
-{
-    const std::vector mainMenu{"Ask a question",
-                                "Read the I Ching",
-                                "Find a quote",
-                                "See the Hexagrams",
-                                "See the Hexagram cross reference",
-                                "Recall past questions",
-                                "Print a random quote",
-                                "Exit"};
-};
-
-void printIntro()
-{
-    std::string inputString;
+    std::string inputString; 
     std::ifstream inFile;
 
-    inFile.open(TextLocation::bookFolder + TextLocation::intro);
+    inFile.open(std::string(bookPart));
     
     if (!inFile)
     {
@@ -45,19 +29,12 @@ void printIntro()
     inFile.close();
 }   
 
-void printMainMenu()
-{
-    std::cout << "MAIN MENU\n";
-    for (size_t i = 0; i < MenuItems::mainMenu.size(); i++)
-        std::cout << i << ") " << MenuItems::mainMenu[i] << '\n';
-}
-
 //  MAIN-----------------------------------------------------------------------
 
 int main() {
     
-    printIntro();
+    printBookPart(getTextLocation( BookPartsLocation::intro));
     printMainMenu();
-
+    
     return 0;
 }

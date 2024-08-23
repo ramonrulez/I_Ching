@@ -1,5 +1,4 @@
-#ifndef HEXAGRAM_H
-#define HEXAGRAM_H
+#pragma once
 
 #include <map>
 #include <string>
@@ -25,6 +24,3 @@ class Hexagram
             {}
 
 };
-
-
-#endif
