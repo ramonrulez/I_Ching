@@ -33,7 +33,7 @@ void printBookPart(const std::string& bookPart)
 
 int main() {
     
-    printBookPart(getTextLocation(BookPartsLocation::intro));
+    printBookPart(getTextLocation(BookPartsLocation::question));
     printMainMenu();
     
     return 0;
