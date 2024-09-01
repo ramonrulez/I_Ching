@@ -1,3 +1,6 @@
+#pragma once
+
+#include <iostream>
 #include <string_view>
 #include <string>
 
@@ -20,12 +23,13 @@ namespace BookPartsLocation
 // It's used to find easy the location of a file
 const std::string getTextLocation(std::string_view bookPart)
 {
+    std::cout << '\n';
     return {std::string(BookPartsLocation::bookFolder) + std::string(bookPart)};
 }
 
 // The same function for the Hexagrams
 const std::string getTextLocation(int hexNum)
 {
+    std::cout << '\n';
     return {std::string(BookPartsLocation::bookFolder) + std::string(BookPartsLocation::hexagrams) + std::to_string(hexNum)};
 }
-
