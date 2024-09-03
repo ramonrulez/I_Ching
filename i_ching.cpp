@@ -3,6 +3,7 @@
 #include "Random.h"
 #include "Question.cpp"
 #include "Quote.cpp"
+#include "ParallelCoinToss.cpp"
 
 #include <cstdlib>
 #include <cstring>
@@ -49,7 +50,7 @@ int main() {
     case 0:
         qusetion = getQuestion();
         printQuestion(qusetion);
-        
+        parallelCoinToss();
         break;
     case 1:
         printBookPart("I_Ching_book/i_ching_full_text");

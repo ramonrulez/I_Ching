@@ -1,15 +1,15 @@
 #pragma once
 
 #include <map>
-#include <string>
+#include <string_view>
 
-const std::map<std::string, std::string> gramMap{{"hhh", "- -."}, {"hht", "---"}, {"htt", "- - "}, {"ttt", "---."}};
+const std::map<std::string_view, std::string_view> gramMap{{"hhh", "- -."}, {"hht", "---"}, {"htt", "- - "}, {"ttt", "---."}};
 
 struct Trigram
 {
-    std::string m_gram_1{};
-    std::string m_gram_2{};
-    std::string m_gram_3{};
+    std::string_view m_gram_1{};
+    std::string_view m_gram_2{};
+    std::string_view m_gram_3{};
 };
 
 class Hexagram
@@ -22,5 +22,5 @@ class Hexagram
         Hexagram(Trigram& upper, Trigram& lower)
             : m_upTri{upper}, m_loTri{lower}
             {}
-
+            
 };
