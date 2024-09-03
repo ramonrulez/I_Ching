@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string_view>
 #include <string>
+#include <fstream>
 
 namespace BookPartsLocation
 {
@@ -33,3 +34,26 @@ const std::string getTextLocation(int hexNum)
     std::cout << '\n';
     return {std::string(BookPartsLocation::bookFolder) + std::string(BookPartsLocation::hexagrams) + std::to_string(hexNum)};
 }
+
+// This function prints out a choosen part of the book
+void printBookPart(const std::string& bookPart)
+{
+    std::string inputString; 
+    std::ifstream inFile;
+
+    inFile.open(bookPart);
+    
+    if (!inFile)
+    {
+        std::cout << "Unable to open file\n";
+        exit(1);
+    }
+    
+    while(std::getline(inFile, inputString)){
+        std::cout << inputString << '\n';
+    }
+    
+    std::cout << '\n';
+
+    inFile.close();
+}   

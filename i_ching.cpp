@@ -1,95 +1,27 @@
 #include "BookPartsLocation.cpp"
 #include "Menus.cpp"
-#include "CinCleanup.cpp"
 #include "Random.h"
+#include "Question.cpp"
+#include "Quote.cpp"
 
 #include <cstdlib>
 #include <cstring>
-#include <fstream>
 #include <iostream>
+#include <string>
 
-// This function prints out a choosen part of the book
-void printBookPart(const std::string& bookPart)
+void question()
 {
-    std::string inputString; 
-    std::ifstream inFile;
+    // Print the rules
+    printBookPart(getTextLocation(BookPartsLocation::question));
 
-    inFile.open(bookPart);
-    
-    if (!inFile)
-    {
-        std::cout << "Unable to open file\n";
-        exit(1);
-    }
-    
-    while(std::getline(inFile, inputString)){
-        std::cout << inputString << '\n';
-    }
-    
-    std::cout << '\n';
+    std::string q{};
+    std::getline(std::cin, q);
 
-    inFile.close();
-}   
+    Question question{getQuestionFromUser()};
 
-// User input for the main menu
-int selectFromMenu()
-{
-    int choise;
-    while (true)
-    {
-        std::cout << "Choose what you want to do[0-" << MenuItems::mainMenu.size() - 1 << "]: ";
-        std::cin >> choise;
-
-        if (clearFailedExtraction() || clearExtraInput())
-        {
-            std::cout << "Wrong input. Try again!\n";
-            continue;
-        }
-        
-        if (!(choise >= 0 && choise < static_cast<int>(MenuItems::mainMenu.size())))
-        {
-            std::cout << "Wrong input. Try again!\n";
-            continue;
-        }
-
-        break;
-    }
-    
-    return choise;
+    std::cout << "\nIs this question right?\n";
+    std::cout << question << '\n';
 }
-
-int selectQuote()
-{
-    int choise;
-    while (true)
-    {
-        std::cout << "Choose what quote you want to read[1-64]: ";
-        std::cin >> choise;
-
-        if (clearFailedExtraction() || clearExtraInput())
-        {
-            std::cout << "Wrong input. Try again!\n";
-            continue;
-        }
-        
-        if (!(choise > 0 && choise < 65))
-        {
-            std::cout << "Wrong input. Try again!\n";
-            continue;
-        }
-
-        break;
-    }
-    
-    return choise;
-}
-
-// This function is not really needed but is there for clarity
-inline void findQuote(int quote)
-{
-    printBookPart(getTextLocation(quote));
-}
-
 //  MAIN-----------------------------------------------------------------------
 
 int main() {
@@ -97,12 +29,12 @@ int main() {
     printBookPart(getTextLocation(BookPartsLocation::intro));
     
     printMainMenu();
-    int choise{selectFromMenu()};
+    int choise{selectFromMainMenu()};
 
     switch (choise)
     {
     case 0:
-        // Question
+        question();
         break;
     case 1:
         printBookPart("I_Ching_book/i_ching_full_text");
