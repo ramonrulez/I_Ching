@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Random.h"
+#include <algorithm>
 #include <iostream>
 
 void parallelCoinToss()
@@ -19,13 +20,17 @@ void parallelCoinToss()
             tosses[j][i] = Random::get(0,1);
     }
 
+    // Sort each line of the array to translate easily to the Hexagrams
+    for (size_t i = 0; i < 6; i++)
+        std::sort(std::begin(tosses[i]), std::end(tosses[i]));
+
+
+
     // TEST 
     for (size_t j = 0; j < 6; j++)
     {
         for (size_t i = 0; i < 3; i++)
-        {
             std::cout << tosses[j][i];
-        }
 
         std::cout << '\n';
     }
