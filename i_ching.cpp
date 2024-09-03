@@ -9,20 +9,29 @@
 #include <iostream>
 #include <string>
 
-void question()
+Question getQuestion()
 {
     // Print the rules
     printBookPart(getTextLocation(BookPartsLocation::question));
 
+    Question question{};
     bool answer{};
     do
     {
         // In this section the user gives his question
-        Question question{getQuestionFromUser()};
+        question = getQuestionFromUser();
 
         // Here we check if the question that the user gave is the correct answer
         answer = isTheQuestionCorrect(question);    
     } while (!(answer));
+
+    return question;
+}
+
+void printQuestion(Question& question)
+{
+    system("clear");
+    std::cout << '\n' << question.getQuestion() << '\n';
 }
 //  MAIN-----------------------------------------------------------------------
 
@@ -33,10 +42,14 @@ int main() {
     printMainMenu();
     int choise{selectFromMainMenu()};
 
+    Question qusetion{};
+
     switch (choise)
     {
     case 0:
-        question();
+        qusetion = getQuestion();
+        printQuestion(qusetion);
+        
         break;
     case 1:
         printBookPart("I_Ching_book/i_ching_full_text");

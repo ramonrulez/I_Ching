@@ -18,7 +18,7 @@ class Question
             m_question{""}
             {}
 
-        std::string getQuestion() {return m_question;}  
+        std::string_view getQuestion() {return m_question;}  
 };
 
 std::istream& operator>>(std::istream& in, Question& question)
