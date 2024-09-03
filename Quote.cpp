@@ -13,18 +13,13 @@ int selectQuote()
         std::cout << "Choose what quote you want to read[1-64]: ";
         std::cin >> choise;
 
-        if (clearFailedExtraction() || clearExtraInput())
+        if (clearFailedExtraction() || clearExtraInput() ||
+            !(choise > 0 && choise < 65))
         {
             std::cout << "Wrong input. Try again!\n";
             continue;
         }
         
-        if (!(choise > 0 && choise < 65))
-        {
-            std::cout << "Wrong input. Try again!\n";
-            continue;
-        }
-
         break;
     }
     

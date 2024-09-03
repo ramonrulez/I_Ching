@@ -14,13 +14,15 @@ void question()
     // Print the rules
     printBookPart(getTextLocation(BookPartsLocation::question));
 
-    std::string q{};
-    std::getline(std::cin, q);
+    bool answer{};
+    do
+    {
+        // In this section the user gives his question
+        Question question{getQuestionFromUser()};
 
-    Question question{getQuestionFromUser()};
-
-    std::cout << "\nIs this question right?\n";
-    std::cout << question << '\n';
+        // Here we check if the question that the user gave is the correct answer
+        answer = isTheQuestionCorrect(question);    
+    } while (!(answer));
 }
 //  MAIN-----------------------------------------------------------------------
 
